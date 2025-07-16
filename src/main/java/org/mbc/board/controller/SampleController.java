@@ -59,7 +59,7 @@ public class SampleController {
 
     @GetMapping("/ex/ex2")
     public  void ex2(Model model){
-        log.info("SampleController.ex  메서드 실행.........");
+        log.info("SampleController.ex2  메서드 실행.........");
         // 이너클래스를 사용해서 객체를 뿌려보자.
 
         List<String> strList = IntStream.range(1,10) // 1~10까지 정수를 생성한다.
@@ -83,6 +83,14 @@ public class SampleController {
 
         // 리턴타입이 void 임으로 /resources/templates/ex/ex2.html
     }
+
+    @GetMapping("/ex/ex3") // http://192.168.111.105/ex/ex3 -> /resources/templates/ex/ex3.html
+    public  void ex3(Model model){
+        log.info("SampleController.ex3 메서드 실행.........");
+
+        model.addAttribute("arr", new String[]{"전민기, 김진우, 전혜진"});
+    }
+
 
 
 
